@@ -23,15 +23,14 @@ const SEO = ({title, description, keywords, image}) => (
        keywords: keywords || defaultKeywords
      }
      return (
-       <div>
-         <Helmet>
-           <title>{seo.title}</title>
-           <meta name="image" content={seo.image}/>
-           <meta name="description" content={seo.description}/>
-           <meta name="keywords" content={seo.keywords}/>
-           <meta name="robots" content="index,follow"/>
-         </Helmet>
-       </div>
+       <Helmet>
+         <title>{seo.title}</title>
+         <meta name="image" content={seo.image}/>
+         <meta name="description" content={seo.description}/>
+         <meta name="keywords" content={seo.keywords}/>
+         <meta name="robots" content="index,follow"/>
+         <html lang="en" />
+       </Helmet>
      )
     }}
   />
