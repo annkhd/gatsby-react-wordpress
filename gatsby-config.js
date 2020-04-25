@@ -5,6 +5,34 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: 'Gatsby-Bootstrap',
+    description: 'This is the description of our website',
+    keywords: 'gatsby, gatsbyjs project',
+    image: '/static/gatsby.png',
+    url: 'https://www.gatsbyjs.org/'
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `practice.codingsrc.com`,
+        protocol: `http`,
+        hostingWPCOM: false,
+      }
+    },
+    'gatsby-plugin-react-helmet',
+  ],
 }
+
